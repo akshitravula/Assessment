@@ -15,6 +15,7 @@ export const getCategories = () => async (dispatch) => {
 export const getProducts = (category = '', limit = 10, skip = 0) => async (dispatch) => {
   try {
     const response = await fetchProductsByCategory(category, limit, skip);
+    console.log("Fetching products for category:", category);
     dispatch({ type: GET_PRODUCTS, payload: response.data });
   } catch (error) {
     console.error('Error fetching products:', error);
