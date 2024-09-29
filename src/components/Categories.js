@@ -8,8 +8,8 @@ const Categories = ({ selectedCategory, onSelectCategory }) => {
   const categories = useSelector((state) => state.categories);
 
   useEffect(() => {
-    dispatch(getCategories());
-  }, [dispatch]);
+  dispatch(getProducts(selectedCategory, 10, 0)); 
+}, [dispatch, selectedCategory]);
 
   return (
     <div className="categories-container">
